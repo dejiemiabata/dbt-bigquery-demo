@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_item
+    description: "Item"
+    columns:
+      - name: item_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: item_name
+        description: "The item name"

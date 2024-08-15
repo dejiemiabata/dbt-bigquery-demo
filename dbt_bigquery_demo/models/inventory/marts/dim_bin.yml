@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_bin
+    description: "Bin"
+    columns:
+      - name: bin_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: bin_name
+        description: "The bin name"

@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: inventory_transactions_raw
+    schema: inventory_transactions_raw
+    database: dbt-bigquery-demo
+    tables:
+      - name: bin
+        columns:
+          - name: id
+            description: "The primary key for this table"
+            data_tests:
+              - unique
+              - not_null
+      - name: costs
+      - name: inventory_status
+        columns:
+          - name: id
+            description: "The primary key for this table"
+            data_tests:
+              - unique
+              - not_null
+      - name: item
+        columns:
+          - name: id
+            description: "The primary key for this table"
+            data_tests:
+              - unique
+              - not_null
+      - name: location
+        columns:
+          - name: id
+            description: "The primary key for this table"
+            data_tests:
+              - unique
+              - not_null
+      - name: transaction_line
+        columns:
+          - name: transaction_id
+            description: "The transaction id associated with the transaction line"
+            data_tests:
+              - not_null

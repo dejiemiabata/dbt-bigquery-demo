@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_inventory_status
+    description: "Inventory Status"
+    columns:
+      - name: inventory_status_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: inventory_status_name
+        description: "The inventory status name"

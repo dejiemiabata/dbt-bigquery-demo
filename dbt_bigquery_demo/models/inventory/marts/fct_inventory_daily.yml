@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_inventory_daily
+    description: "Daily Inventory Table"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: item_id
+        description: "The Item ID"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_item')
+              field: item_id
+      - name: location_name
+        description: "The Location Name"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: location_name
+      - name: total_quantity
+        description: "The total quantity associated with a certain item with a particular location/bin/status combo"
+      - name: total_value
+        description: "The total value associated with a certain item with a particular location/bin/status combo"
